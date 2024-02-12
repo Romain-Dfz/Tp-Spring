@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Details</title>
+</head>
+<body>
+<h1>Task Details</h1>
+<p>Description: <span th:text="${task.description}"></span></p>
+<p>Status: <span th:text="${task.completed ? 'Completed' : 'Pending'}"></span></p>
+<form method="post" th:action="@{/tasks/{id}/complete(id=${task.id})}">
+    <button type="submit">Mark as Completed</button>
+</form>
+</body>
+</html>
