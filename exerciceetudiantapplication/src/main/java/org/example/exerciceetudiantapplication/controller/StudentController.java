@@ -1,4 +1,3 @@
-// StudentController.java
 package org.example.exerciceetudiantapplication.controller;
 
 import org.example.exerciceetudiantapplication.repository.StudentRepository;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @Controller
-public class StudentController {
+public class sStudentController {
 
     @Autowired
     private StudentRepository studentRepository;
