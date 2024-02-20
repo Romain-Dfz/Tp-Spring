@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Accueil</title>
+    <!-- Intégration de Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Intégration de styles personnalisés -->
+    <style>
+        header, section, footer {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<header class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Bienvenue sur notre Blog!</h1>
+        <p class="lead">Ce blog est dédié à partager des idées, des expériences et des informations intéressantes.</p>
+    </div>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link btn btn-warning" href="/upload/form">Uploader un fichier</a></li>
+            <!-- Ajoutez d'autres liens de navigation ici -->
+        </ul>
+    </div>
+</nav>
+<section class="container">
+    <h2>Informations</h2>
+    <p>Bienvenue sur notre blog! Nous sommes ravis de vous avoir ici. Explorez nos articles et n'hésitez pas à partager vos pensées dans les commentaires.</p>
+</section>
+<section class="container">
+    <h2>Connexion</h2>
+    <form action="/exercice/login" method="POST">
+        <div class="form-group">
+            <label for="login">Login :</label>
+            <input type="text" class="form-control" id="login" name="login" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Se connecter</button>
+    </form>
+</section>
+<section class="container">
+    <h2>Fichier téléchargé : </h2>
+    <div th:if="${filePath}">
+        <img src="${uploadDirAbsolutePath}" alt="Votre fichier">
+    </div>
+</section>
+
+<footer class="footer bg-light">
+    <div class="container">
+        <p>&copy; 2024 Notre Blog. Tous droits réservés.</p>
+    </div>
+</footer>
+
+<!-- Intégration de Bootstrap JS (si nécessaire) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
